@@ -82,14 +82,21 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
+
     public function me()
     {
-        try {
-            return response()->json(['success' => true, 'data' => auth()->user()]);
-        } catch (\exception $e) {
-            return response()->json(['success' => false, 'msg' => $e->getMessage()]);
-        }
+        return response()->json(auth()->user());
     }
+
+    //ganti me dengan dibawah ini untuk menyamarkan nama akun
+    // public function me()
+    // {
+    //     try {
+    //         return response()->json(['success' => true, 'data' => auth()->user()]);
+    //     } catch (\exception $e) {
+    //         return response()->json(['success' => false, 'msg' => $e->getMessage()]);
+    //     }
+    // }
 
 
     //logout user dari profile
